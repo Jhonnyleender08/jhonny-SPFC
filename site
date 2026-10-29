@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal especial sobre a história do São Paulo Futebol Clube: fundação, títulos, ídolos, Morumbi e legado tricolor.">
+  <title>Tricolor Eterno | História do São Paulo FC</title>
+  <style>
+    :root {
+      --red: #e31837;
+      --red-dark: #a90f27;
+      --black: #101114;
+      --ink: #202127;
+      --muted: #656873;
+      --paper: #f4f5f7;
+      --white: #fff;
+      --line: #e2e4e9;
+      --shadow: 0 18px 50px rgba(13, 15, 20, .12);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .topline { height: 5px; background: linear-gradient(90deg, var(--red) 0 33.33%, white 33.33% 66.66%, #111 66.66%); }
+    header { position: sticky; top: 0; z-index: 50; background: rgba(16,17,20,.96); color: white; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .nav-wrap { max-width: 1200px; margin: auto; padding: 0 22px; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.04em; font-size: 1.12rem; white-space: nowrap; }
+    .crest { width: 42px; height: 42px; display: grid; place-items: center; color: white; font-weight: 950; font-size: .7rem; border: 2px solid white; outline: 3px solid var(--red); outline-offset: -7px; background: linear-gradient(135deg, #111 0 33%, white 33% 66%, var(--red) 66%); text-shadow: 0 1px 4px #000; clip-path: polygon(0 0,100% 0,100% 70%,50% 100%,0 70%); }
+    .brand span small { display: block; font-size: .64rem; letter-spacing: .16em; color: #c6c8ce; font-weight: 700; }
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav a { font-size: .88rem; color: #e1e2e6; font-weight: 700; transition: color .2s; }
+    nav a:hover, nav a:focus { color: #ff536b; }
+    .menu-btn { display: none; border: 1px solid #555; color: white; background: transparent; padding: 9px 12px; border-radius: 9px; font-weight: 800; }
+    .hero { color: white; background: radial-gradient(circle at 75% 25%, rgba(227,24,55,.36), transparent 28%), linear-gradient(115deg, #090a0d 0%, #191a20 58%, #2a0c14 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; opacity: .11; background: repeating-linear-gradient(125deg, transparent 0 45px, white 46px 47px, transparent 48px 90px); }
+    .hero-inner { max-width: 1200px; margin: auto; padding: 92px 22px 88px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 54px; align-items: center; position: relative; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .18em; color: #ff667b; font-size: .75rem; font-weight: 900; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.7rem); line-height: .98; letter-spacing: -.065em; margin: 18px 0 22px; }
+    h1 em { color: var(--red); font-style: normal; }
+    .hero p { max-width: 650px; font-size: 1.1rem; color: #d4d5da; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 12px 20px; font-weight: 850; border: 1px solid transparent; transition: transform .2s, background .2s; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--red); color: white; }
+    .btn-secondary { border-color: #777983; color: white; background: rgba(255,255,255,.04); }
+    .hero-art { min-height: 340px; display: grid; place-items: center; position: relative; }
+    .hero-ring { width: min(330px, 80vw); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; display: grid; place-items: center; box-shadow: 0 0 0 28px rgba(255,255,255,.025), 0 0 0 58px rgba(255,255,255,.02); transform: rotate(-12deg); }
+    .hero-shield { width: 190px; height: 220px; background: linear-gradient(150deg, white 0 31%, #111 31% 65%, var(--red) 65%); clip-path: polygon(0 0,100% 0,100% 65%,50% 100%,0 65%); border: 5px solid white; display: flex; align-items: flex-start; justify-content: center; padding-top: 22px; color: white; font-weight: 1000; font-size: 1.55rem; text-shadow: 0 2px 6px #000; box-shadow: var(--shadow); }
+    .hero-badge { position: absolute; bottom: 14px; right: 5%; background: white; color: #17181c; padding: 14px 18px; border-left: 5px solid var(--red); box-shadow: var(--shadow); font-weight: 900; transform: rotate(3deg); }
+    .hero-badge small { display: block; color: var(--muted); font-size: .7rem; letter-spacing: .12em; }
+    .stats { background: white; border-bottom: 1px solid var(--line); }
+    .stats-inner { max-width: 1200px; margin: auto; padding: 22px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat { border-left: 3px solid var(--red); padding-left: 14px; }
+    .stat strong { display: block; font-size: 1.55rem; line-height: 1.1; letter-spacing: -.04em; }
+    .stat span { color: var(--muted); font-size: .82rem; }
+    main { max-width: 1200px; padding: 0 22px; margin: auto; }
+    section { padding: 82px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3.1rem); letter-spacing: -.055em; line-height: 1.05; margin: 8px 0 0; }
+    .section-head p { max-width: 520px; color: var(--muted); margin: 0; }
+    .kicker { color: var(--red); font-size: .75rem; text-transform: uppercase; letter-spacing: .18em; font-weight: 950; }
+    .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .feature-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,.035); }
+    .feature-card h3 { margin: 0 0 12px; font-size: 1.4rem; letter-spacing: -.03em; }
+    .feature-card p { color: #555964; margin: 0 0 12px; }
+    .number { font-size: 3.5rem; line-height: 1; color: var(--red); font-weight: 950; letter-spacing: -.07em; margin-bottom: 18px; }
+    .callout { margin-top: 22px; padding: 24px 28px; border-radius: var(--radius); color: white; background: linear-gradient(110deg, #141519, #2a0d15); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .callout strong { font-size: 1.25rem; }
+    .callout p { color: #d2d3d8; margin: 5px 0 0; }
+    .timeline { position: relative; max-width: 900px; margin: auto; }
+    .timeline::before { content: ""; position: absolute; left: 105px; top: 5px; bottom: 5px; width: 2px; background: linear-gradient(var(--red), #d7d9df); }
+    .time-item { display: grid; grid-template-columns: 82px 1fr; gap: 48px; margin: 0 0 28px; position: relative; }
+    .time-year { color: var(--red); font-size: 1.2rem; font-weight: 950; text-align: right; padding-top: 2px; }
+    .time-content { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; position: relative; }
+    .time-content::before { content: ""; position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--red); border: 4px solid var(--paper); left: -36px; top: 23px; }
+    .time-content h3 { margin: 0 0 6px; font-size: 1.12rem; }
+    .time-content p { margin: 0; color: var(--muted); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .filter-btn { background: white; border: 1px solid var(--line); color: #34363d; border-radius: 999px; padding: 9px 15px; font-weight: 800; cursor: pointer; }
+    .filter-btn.active, .filter-btn:hover { background: var(--red); color: white; border-color: var(--red); }
+    .trophies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .trophy-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: relative; overflow: hidden; }
+    .trophy-card::after { content: "✦"; position: absolute; font-size: 6rem; right: 10px; bottom: -28px; color: rgba(227,24,55,.07); }
+    .trophy-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: #fff0f2; font-size: 1.45rem; margin-bottom: 18px; }
+    .trophy-card h3 { margin: 0 0 8px; }
+    .trophy-card p { color: var(--muted); margin: 0 0 14px; font-size: .92rem; }
+    .years { color: var(--red); font-weight: 900; font-size: .85rem; }
+    .idol-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .idol { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 22px; transition: transform .2s, box-shadow .2s; }
+    .idol:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .idol-mark { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, #17181d 0 33%, white 33% 66%, var(--red) 66%); border: 3px solid white; outline: 1px solid var(--line); font-size: 1.2rem; font-weight: 950; color: #111; text-shadow: 0 1px 2px white; margin-bottom: 15px; }
+    .idol h3 { margin: 0 0 5px; font-size: 1.08rem; }
+    .idol .role { color: var(--red); font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 900; }
+    .idol p { color: var(--muted); font-size: .9rem; margin: 10px 0 0; }
+    .stadium { display: grid; grid-template-columns: 1fr 1fr; background: #121318; color: white; border-radius: 24px; overflow: hidden; }
+    .stadium-visual { min-height: 340px; padding: 34px; display: flex; flex-direction: column; justify-content: end; background: radial-gradient(ellipse at 50% 35%, rgba(255,255,255,.24), transparent 22%), linear-gradient(180deg, rgba(227,24,55,.1), transparent), repeating-linear-gradient(90deg, #181a20 0 28px, #202229 28px 56px); position: relative; }
+    .stadium-visual::before { content: ""; position: absolute; top: 42px; left: 10%; right: 10%; height: 60px; background: repeating-linear-gradient(90deg, #fff 0 4px, transparent 4px 22px); filter: blur(5px); opacity: .5; }
+    .stadium-visual::after { content: ""; position: absolute; left: 8%; right: 8%; bottom: 35%; height: 90px; border-radius: 50% 50% 0 0; border: 2px solid rgba(255,255,255,.25); border-bottom: 0; }
+    .stadium-visual h3 { font-size: 2.2rem; letter-spacing: -.05em; margin: 0; position: relative; z-index: 1; }
+    .stadium-visual span { color: #ff7588; font-weight: 900; letter-spacing: .12em; position: relative; z-index: 1; }
+    .stadium-copy { padding: 36px; align-self: center; }
+    .stadium-copy h2 { font-size: 2.2rem; line-height: 1.05; letter-spacing: -.05em; margin: 8px 0 16px; }
+    .stadium-copy p { color: #c9cad0; }
+    .stadium-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .stadium-facts div { border-top: 1px solid #393a42; padding-top: 12px; }
+    .stadium-facts strong { display: block; font-size: 1.3rem; }
+    .stadium-facts span { color: #b5b7bf; font-size: .8rem; }
+    .legacy-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .legacy-copy { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+    .legacy-copy p { color: #555964; }
+    .quote-card { border-radius: var(--radius); padding: 30px; background: linear-gradient(145deg, var(--red), #9f1027); color: white; display: flex; flex-direction: column; justify-content: space-between; }
+    .quote-card .quote { font-size: 1.6rem; line-height: 1.25; font-weight: 900; letter-spacing: -.04em; }
+    .quote-card small { opacity: .8; }
+    .sources { font-size: .85rem; color: var(--muted); }
+    .sources a { color: var(--red-dark); text-decoration: underline; }
+    footer { background: #101114; color: white; margin-top: 30px; }
+    .footer-inner { max-width: 1200px; margin: auto; padding: 34px 22px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-inner p { color: #b7b9c1; margin: 5px 0 0; font-size: .86rem; }
+    .back-top { color: #ff667b; font-weight: 900; }
+    .hidden { display: none !important; }
+    @media (max-width: 900px) {
+      nav { gap: 12px; }
+      nav a { font-size: .78rem; }
+      .hero-inner { grid-template-columns: 1fr .65fr; gap: 20px; }
+      .idol-grid { grid-template-columns: repeat(2, 1fr); }
+      .trophies { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .nav-wrap { min-height: 68px; }
+      .menu-btn { display: block; }
+      nav { display: none; position: absolute; left: 0; right: 0; top: 68px; padding: 18px 22px 24px; background: #101114; flex-direction: column; align-items: flex-start; border-top: 1px solid #333; }
+      nav.open { display: flex; }
+      nav a { font-size: .95rem; }
+      .hero-inner { grid-template-columns: 1fr; padding-top: 62px; }
+      .hero-art { min-height: 250px; }
+      .hero-ring { width: 230px; }
+      .hero-shield { width: 135px; height: 160px; font-size: 1.2rem; }
+      .hero-badge { right: 8%; bottom: 0; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 58px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .history-grid, .stadium, .legacy-grid { grid-template-columns: 1fr; }
+      .timeline::before { left: 66px; }
+      .time-item { grid-template-columns: 48px 1fr; gap: 34px; }
+      .time-year { font-size: .98rem; }
+      .time-content::before { left: -27px; }
+      .trophies { grid-template-columns: 1fr; }
+      .stadium-visual { min-height: 260px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .idol-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2.8rem; }
+      .callout { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Tricolor Eterno - início">
+        <span class="crest">SPFC</span>
+        <span>TRICOLOR ETERNO<small>HISTÓRIA • PAIXÃO • GLÓRIA</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+      <nav id="mainNav" aria-label="Navegação principal">
+        <a href="#historia">História</a>
+        <a href="#linha-do-tempo">Linha do tempo</a>
+        <a href="#conquistas">Conquistas</a>
+        <a href="#idolos">Ídolos</a>
+        <a href="#morumbi">Morumbi</a>
+        <a href="#legado">Legado</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Especial • A história de um gigante</div>
+        <h1>Uma história<br>feita de <em>glórias.</em></h1>
+        <p>Da fundação à consagração internacional, conheça a trajetória do São Paulo Futebol Clube: um time que transformou tradição, talento e ambição em uma das histórias mais marcantes do futebol brasileiro.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#historia">Explorar a história ↘</a>
+          <a class="btn btn-secondary" href="#conquistas">Ver conquistas</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Símbolo tricolor estilizado">
+        <div class="hero-ring"><div class="hero-shield">SPFC</div></div>
+        <div class="hero-badge"><small>DESDE</small>1930 · 1935</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats" aria-label="Destaques históricos">
+    <div class="stats-inner">
+      <div class="stat"><strong>1930</strong><span>Fundação do clube</span></div>
+      <div class="stat"><strong>3×</strong><span>Campeão mundial</span></div>
+      <div class="stat"><strong>3×</strong><span>Libertadores conquistadas</span></div>
+      <div class="stat"><strong>Morumbi</strong><span>A casa tricolor</span></div>
+    </div>
+  </div>
+
+  <main>
+    <section id="historia">
+      <div class="section-head">
+        <div><div class="kicker">Capítulo 01</div><h2>Uma origem marcada<br>pela paixão</h2></div>
+        <p>Uma trajetória de recomeços, construção coletiva e busca constante por protagonismo dentro e fora do campo.</p>
+      </div>
+      <div class="history-grid">
+        <article class="feature-card">
+          <div class="number">1930</div>
+          <h3>O nascimento tricolor</h3>
+          <p>O São Paulo Futebol Clube foi fundado em 25 de janeiro de 1930, reunindo apaixonados pelo futebol e pessoas ligadas à tradição esportiva da cidade. O clube nasceu com as cores vermelho, branco e preto, que se tornariam parte inseparável de sua identidade.</p>
+          <p>Nos primeiros anos, o Tricolor buscou firmar seu espaço no cenário paulista, construindo uma identidade competitiva e uma relação cada vez mais forte com seus torcedores.</p>
+        </article>
+        <article class="feature-card">
+          <div class="number">1935</div>
+          <h3>O recomeço que virou legado</h3>
+          <p>Após uma crise institucional e o encerramento das atividades da primeira fase, dirigentes, atletas e apoiadores trabalharam para reconstruir o clube. Em 16 de dezembro de 1935, o São Paulo foi reorganizado e retomou sua caminhada.</p>
+          <p>Essa refundação se tornou símbolo de resistência: a capacidade de atravessar dificuldades e voltar a competir com ambição, uma característica que acompanha a narrativa são-paulina até hoje.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <div><strong>Tradição que atravessa gerações.</strong><p>O escudo, as três cores e a camisa tricolor representam uma história construída por atletas, funcionários e torcedores.</p></div>
+        <a class="btn btn-primary" href="#linha-do-tempo">Ver momentos marcantes</a>
+      </div>
+    </section>
+
+    <section id="linha-do-tempo">
+      <div class="section-head">
+        <div><div class="kicker">Capítulo 02</div><h2>Linha do tempo<br>tricolor</h2></div>
+        <p>Uma seleção de marcos que ajudam a entender a evolução do clube e sua presença no futebol nacional e internacional.</p>
+      </div>
+      <div class="timeline">
+        <article class="time-item"><div class="time-year">1930</div><div class="time-content"><h3>Fundação do São Paulo FC</h3><p>O clube nasce na capital paulista em 25 de janeiro, data que se tornaria uma celebração anual para a torcida.</p></div></article>
+        <article class="time-item"><div class="time-year">1935</div><div class="time-content"><h3>Refundação e retomada</h3><p>O Tricolor é reorganizado em dezembro e reinicia sua trajetória esportiva.</p></div></article>
+        <article class="time-item"><div class="time-year">1940</div><div class="time-content"><h3>Um novo palco: o Pacaembu</h3><p>A inauguração do estádio municipal de São Paulo ampliou as possibilidades para o futebol na cidade, em uma época de crescimento do esporte.</p></div></article>
+        <article class="time-item"><div class="time-year">1957</div><div class="time-content"><h3>O título paulista e a chegada de Zizinho</h3><p>Com nomes experientes e futebol de qualidade, o São Paulo conquista o Campeonato Paulista de 1957. Zizinho, um dos grandes jogadores brasileiros, teve papel marcante naquela equipe.</p></div></article>
+        <article class="time-item"><div class="time-year">1960</div><div class="time-content"><h3>Inauguração do Morumbi</h3><p>O estádio é inaugurado oficialmente, ainda em etapas. O projeto simbolizava a ambição de construir uma casa à altura do crescimento do clube.</p></div></article>
+        <article class="time-item"><div class="time-year">1977</div><div class="time-content"><h3>Primeiro Campeonato Brasileiro</h3><p>O Tricolor conquista seu primeiro título brasileiro, vencendo o Atlético Mineiro na decisão por pênaltis no Mineirão.</p></div></article>
+        <article class="time-item"><div class="time-year">1992</div><div class="time-content"><h3>A primeira Libertadores e o mundo</h3><p>Com Telê Santana no comando e Raí como um dos protagonistas, o São Paulo vence a Libertadores e depois conquista o Mundial Interclubes diante do Barcelona.</p></div></article>
+        <article class="time-item"><div class="time-year">1993</div><div class="time-content"><h3>O bicampeonato continental</h3><p>O clube volta a conquistar a Libertadores e o título mundial, desta vez contra o Milan, consolidando sua projeção internacional.</p></div></article>
+        <article class="time-item"><div class="time-year">2005</div><div class="time-content"><h3>O ano da tríplice glória</h3><p>O São Paulo conquista o Campeonato Paulista, a Libertadores e o Mundial de Clubes da FIFA, vencido contra o Liverpool no Japão.</p></div></article>
+        <article class="time-item"><div class="time-year">2006–08</div><div class="time-content"><h3>Tricampeonato brasileiro consecutivo</h3><p>Com títulos nacionais em 2006, 2007 e 2008, o clube alcança uma sequência histórica e reforça sua reputação de equipe competitiva.</p></div></article>
+        <article class="time-item"><div class="time-year">2023</div><div class="time-content"><h3>A primeira Copa do Brasil</h3><p>O São Paulo vence o Flamengo na final e conquista pela primeira vez a Copa do Brasil, completando uma lacuna importante em sua galeria nacional.</p></div></article>
+      </div>
+    </section>
+
+    <section id="conquistas">
+      <div class="section-head">
+        <div><div class="kicker">Capítulo 03</div><h2>Conquistas que<br>fizeram história</h2></div>
+        <p>Uma coleção de títulos que marcou diferentes gerações. Use os filtros para navegar pelas principais competições.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar conquistas">
+        <button class="filter-btn active" data-filter="todos">Todas</button>
+        <button class="filter-btn" data-filter="internacional">Internacionais</button>
+        <button class="filter-btn" data-filter="nacional">Nacionais</button>
+        <button class="filter-btn" data-filter="estadual">Estaduais</button>
+      </div>
+      <div class="trophies">
+        <article class="trophy-card" data-category="internacional"><div class="trophy-icon">🌎</div><h3>Mundial de Clubes / Interclubes</h3><p>O São Paulo conquistou o mundo em três ocasiões, com equipes de épocas diferentes e vitórias sobre grandes adversários europeus.</p><div class="years">1992 · 1993 · 2005</div></article>
+        <article class="trophy-card" data-category="internacional"><div class="trophy-icon">🏆</div><h3>Copa Libertadores</h3><p>O principal torneio sul-americano foi conquistado em campanhas que marcaram a história continental do clube.</p><div class="years">1992 · 1993 · 2005</div></article>
+        <article class="trophy-card" data-category="nacional"><div class="trophy-icon">🇧🇷</div><h3>Campeonato Brasileiro</h3><p>O Tricolor ergueu a taça nacional em diferentes ciclos, incluindo uma sequência de três títulos consecutivos.</p><div class="years">1977 · 1986 · 1991 · 2006 · 2007 · 2008</div></article>
+        <article class="trophy-card" data-category="nacional"><div class="trophy-icon">🥇</div><h3>Copa do Brasil</h3><p>Em 2023, o clube conquistou pela primeira vez a competição, vencendo o Flamengo na decisão.</p><div class="years">2023</div></article>
+        <article class="trophy-card" data-category="estadual"><div class="trophy-icon">🏟️</div><h3>Campeonato Paulista</h3><p>O estadual faz parte da identidade do São Paulo desde os primeiros anos e reúne rivalidades históricas do futebol paulista.</p><div class="years">Destaques: 1943, 1945, 1946, 1948, 1949, 1953, 1957, 1970, 1971, 1975, 1980, 1981, 1985, 1987, 1989, 1991, 1992, 1998, 2000, 2005, 2021</div></article>
+        <article class="trophy-card" data-category="internacional"><div class="trophy-icon">🛡️</div><h3>Outras taças internacionais</h3><p>Além dos títulos mais conhecidos, o clube venceu torneios como a Supercopa Libertadores, a Recopa Sul-Americana e a Copa Conmebol.</p><div class="years">Supercopa: 1993 · Recopa: 1993, 1994, 2006 · Copa Conmebol: 1994</div></article>
+      </div>
+      <p class="sources" style="margin-top:18px">Nota editorial: a lista acima destaca competições e anos amplamente reconhecidos. Para uso acadêmico ou publicação oficial, confira o inventário atualizado de títulos nos canais do clube e das entidades organizadoras.</p>
+    </section>
+
+    <section id="idolos">
+      <div class="section-head">
+        <div><div class="kicker">Capítulo 04</div><h2>Ídolos eternos</h2></div>
+        <p>Jogadores e treinadores que deixaram marcas por talento, liderança, identificação com a camisa e participação em conquistas históricas.</p>
+      </div>
+      <div class="idol-grid">
+        <article class="idol"><div class="idol-mark">RC</div><h3>Rogério Ceni</h3><div class="role">Goleiro e capitão</div><p>Referência de liderança e longevidade, tornou-se símbolo do clube. Além das defesas, ficou conhecido por gols de falta e pênalti.</p></article>
+        <article class="idol"><div class="idol-mark">R</div><h3>Raí</h3><div class="role">Meia • camisa 10</div><p>Protagonista da equipe campeã mundial em 1992, unia inteligência, técnica e presença decisiva nos grandes jogos.</p></article>
+        <article class="idol"><div class="idol-mark">TS</div><h3>Telê Santana</h3><div class="role">Treinador</div><p>Comandou as equipes campeãs da Libertadores e do mundo em 1992 e 1993. Seu trabalho ficou associado ao futebol ofensivo e à excelência técnica.</p></article>
+        <article class="idol"><div class="idol-mark">C</div><h3>Careca</h3><div class="role">Atacante</div><p>Centroavante de enorme qualidade, foi um dos nomes importantes da equipe campeã brasileira de 1986 e brilhou com sua capacidade de finalização.</p></article>
+        <article class="idol"><div class="idol-mark">K</div><h3>Kaká</h3><div class="role">Meia • revelação</div><p>Revelado pelo clube, destacou-se ainda jovem antes de construir carreira internacional e conquistar o prêmio de melhor jogador do mundo em 2007.</p></article>
+        <article class="idol"><div class="idol-mark">L</div><h3>Diego Lugano</h3><div class="role">Zagueiro • liderança</div><p>Defensor uruguaio identificado com a torcida, foi um dos líderes da equipe campeã da Libertadores e do Mundial em 2005.</p></article>
+        <article class="idol"><div class="idol-mark">M</div><h3>Müller</h3><div class="role">Atacante</div><p>Atacante veloz e decisivo, fez parte de uma geração vitoriosa e participou das conquistas continentais e mundiais do início dos anos 1990.</p></article>
+        <article class="idol"><div class="idol-mark">Z</div><h3>Zetti</h3><div class="role">Goleiro</div><p>Foi peça fundamental nas conquistas de 1992 e 1993, lembrado pela segurança, reflexos e atuações decisivas nas finais.</p></article>
+        <article class="idol"><div class="idol-mark">D</div><h3>Denílson</h3><div class="role">Ponta</div><p>Revelado no clube, encantou pelo drible e pela habilidade, tornando-se um dos nomes brasileiros mais reconhecidos de sua geração.</p></article>
+        <article class="idol"><div class="idol-mark">L</div><h3>Leônidas da Silva</h3><div class="role">Atacante histórico</div><p>Um dos grandes nomes do futebol brasileiro, ajudou a popularizar o clube na década de 1940 e marcou época com sua técnica.</p></article>
+        <article class="idol"><div class="idol-mark">Z</div><h3>Zizinho</h3><div class="role">Meia • maestro</div><p>Craque de enorme visão de jogo, foi destaque na conquista paulista de 1957 e é lembrado entre os grandes jogadores de sua época.</p></article>
+        <article class="idol"><div class="idol-mark">M</div><h3>Mineiro</h3><div class="role">Volante</div><p>Autor do gol da final do Mundial de 2005 contra o Liverpool, eternizou seu nome em uma das partidas mais lembradas da história tricolor.</p></article>
+      </div>
+    </section>
+
+    <section id="morumbi">
+      <div class="stadium">
+        <div class="stadium-visual"><span>A CASA TRICOLOR</span><h3>Estádio do Morumbi</h3></div>
+        <div class="stadium-copy">
+          <div class="kicker">Capítulo 05</div>
+          <h2>Um estádio construído com ambição</h2>
+          <p>O Estádio Cícero Pompeu de Toledo, conhecido como Morumbi, foi idealizado como uma casa monumental para o São Paulo. Inaugurado parcialmente em 1960 e concluído em 1970, tornou-se um dos grandes palcos do futebol brasileiro.</p>
+          <p>Ao longo das décadas, recebeu jogos decisivos, clássicos, partidas da Seleção Brasileira e apresentações musicais de grande porte. Para a torcida, o Morumbi representa memória, pertencimento e a emoção de acompanhar o clube em sua própria casa.</p>
+          <div class="stadium-facts">
+            <div><strong>1960</strong><span>Inauguração parcial</span></div>
+            <div><strong>1970</strong><span>Conclusão do estádio</span></div>
+            <div><strong>Morumbi</strong><span>Nome popular</span></div>
+            <div><strong>Casa tricolor</strong><span>Palco de grandes noites</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="legado">
+      <div class="section-head">
+        <div><div class="kicker">Capítulo 06</div><h2>Mais que um clube:<br>um legado</h2></div>
+        <p>O São Paulo é feito de resultados, mas também de símbolos, histórias compartilhadas e uma torcida que atravessa gerações.</p>
+      </div>
+      <div class="legacy-grid">
+        <article class="legacy-copy">
+          <h3>Identidade tricolor</h3>
+          <p>Vermelho, branco e preto são mais do que cores: representam a união de diferentes origens em um símbolo reconhecido no futebol. O escudo, a camisa e o nome do clube conectam passado e presente, do torcedor que acompanhou os primeiros títulos à nova geração que vive o futebol digital.</p>
+          <h3>Uma torcida que faz parte da história</h3>
+          <p>Nas arquibancadas do Morumbi, nas ruas e em comunidades espalhadas pelo Brasil, os torcedores constroem a atmosfera dos jogos e preservam lembranças de finais, viradas e ídolos. A paixão também se expressa em projetos sociais, formação de atletas e iniciativas que aproximam o clube de sua comunidade.</p>
+          <h3>Influência no futebol brasileiro</h3>
+          <p>As equipes históricas do São Paulo ajudaram a projetar jogadores, treinadores e modelos de jogo. Suas conquistas internacionais ampliaram a presença do futebol brasileiro no cenário mundial, enquanto sua base revelou talentos que seguiram carreira no país e no exterior.</p>
+        </article>
+        <aside class="quote-card">
+          <div class="quote">“A história de um clube não cabe apenas em uma sala de troféus. Ela vive nas pessoas que carregam suas cores.”</div>
+          <small>Uma homenagem à memória tricolor</small>
+        </aside>
+      </div>
+    </section>
+
+    <section id="referencias">
+      <div class="section-head">
+        <div><div class="kicker">Para continuar explorando</div><h2>Referências e pesquisa</h2></div>
+        <p>Use fontes institucionais para conferir datas, estatísticas e a relação completa de títulos antes de republicar o conteúdo.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Fontes recomendadas</h3>
+        <p>Este portal é um projeto editorial independente, feito para fins informativos e educacionais. Para confirmar dados históricos, consulte os canais oficiais do clube e as entidades responsáveis pelas competições.</p>
+        <ul>
+          <li><a href="https://www.saopaulofc.net/" target="_blank" rel="noopener noreferrer">Site oficial do São Paulo Futebol Clube</a></li>
+          <li><a href="https://www.conmebol.com/" target="_blank" rel="noopener noreferrer">CONMEBOL — competições sul-americanas</a></li>
+          <li><a href="https://www.fifa.com/" target="_blank" rel="noopener noreferrer">FIFA — competições internacionais</a></li>
+          <li><a href="https://www.cbf.com.br/" target="_blank" rel="noopener noreferrer">CBF — futebol brasileiro</a></li>
+        </ul>
+        <p class="sources">Identidade visual estilizada para este projeto. Este site não é oficial e não representa o São Paulo FC. Marcas, símbolos e nomes pertencem aos seus respectivos titulares.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><a class="brand" href="#inicio"><span class="crest">SPFC</span><span>TRICOLOR ETERNO<small>HISTÓRIA • PAIXÃO • GLÓRIA</small></span></a><p>Um portal especial sobre a trajetória do São Paulo Futebol Clube.</p></div>
+      <a class="back-top" href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.textContent = isOpen ? '✕ Fechar' : '☰ Menu';
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰ Menu';
+      });
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const trophyCards = document.querySelectorAll('.trophy-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        trophyCards.forEach(card => {
+          const matches = filter === 'todos' || card.dataset.category === filter;
+          card.classList.toggle('hidden', !matches);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
